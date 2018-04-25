@@ -1,0 +1,907 @@
+!--------------------------------------------------------	 
+!PRE-Check DC2A4-CLOUD-CFD-vdc2: Step 0 Capture the O/P of the below commands for comparison after the change
+!--------------------------------------------------------
+!
+sh int status | in Eth1/1
+!
+show interfaces Eth1/1 | in error
+!
+ 
+sh bgp vrf all summary | in 192.131.240.221
+!
+ 
+ 
+sh bgp vrf all summary | in 192.2.248.61
+!
+ 
+sh bgp vrf all summary | in 192.4.116.5
+!
+ 
+sh bgp vrf all summary | in 192.131.241.237
+!
+ 
+sh bgp vrf all summary | in 192.4.178.17
+!
+ 
+sh bgp vrf all summary | in 192.2.181.34
+!
+ 
+sh bgp vrf all summary | in 192.2.168.17
+!
+ 
+sh bgp vrf all summary | in 192.4.176.17
+!
+ 
+sh bgp vrf all summary | in 192.2.209.5
+!
+ 
+sh bgp vrf all summary | in 192.2.24.117
+!
+ 
+sh bgp vrf all summary | in 192.4.198.17
+!
+ 
+sh bgp vrf all summary | in 192.131.241.66
+!
+ 
+sh bgp vrf all summary | in 192.2.176.5
+!
+ 
+sh bgp vrf all summary | in 192.2.16.61
+!
+ 
+sh bgp vrf all summary | in 192.4.139.5
+!
+ 
+sh bgp vrf all summary | in 192.2.14.61
+!
+ 
+sh bgp vrf all summary | in 192.208.96.57
+!
+ 
+sh bgp vrf all summary | in 192.2.243.5
+!
+ 
+sh bgp vrf all summary | in 192.2.158.9
+!
+ 
+sh bgp vrf all summary | in 192.2.253.5
+!
+ 
+sh bgp vrf all summary | in 192.131.241.42
+!
+ 
+sh bgp vrf all summary | in 192.2.178.41
+!
+!
+!
+!
+!-------------------------------------------------------- 
+! DC2A4-CLOUD-CFD-vdc2: Shutdown the PE<=>CE interface 
+!-------------------------------------------------------- 
+
+interface Eth1/1
+shutdown
+!
+ 
+no interface vlan 3066
+!
+ 
+no interface vlan 1502
+!
+ 
+no interface vlan 2417
+!
+ 
+no interface vlan 2412
+!
+ 
+no interface vlan 3176
+!
+ 
+no interface vlan 2664
+!
+ 
+no interface vlan 3382
+!
+ 
+no interface vlan 2436
+!
+ 
+no interface vlan 2661
+!
+ 
+no interface vlan 2451
+!
+ 
+no interface vlan 3241
+!
+ 
+no interface vlan 2669
+!
+ 
+no interface vlan 3105
+!
+ 
+no interface vlan 2471
+!
+ 
+no interface vlan 2422
+!
+ 
+no interface vlan 2409
+!
+ 
+no interface vlan 2425
+!
+ 
+no interface vlan 2404
+!
+ 
+no interface vlan 2442
+!
+ 
+no interface vlan 2462
+!
+ 
+no interface vlan 2446
+!
+ 
+no interface vlan 3095
+!
+ 
+no interface vlan 2573
+!
+!
+!##################################################################################### 
+! Step 1B Rollout : DC2A4-CLOUD-CFD-vdc2==>CE-PE interconnection isolation if replacing Vlans interface by sub-interfaces
+!#################################################################################### 
+ 
+!-------------------------------------------------------- 
+! DC2A4-CLOUD-CFD-vdc2: change the interface description and configure sub-interface
+!-------------------------------------------------------- 
+!
+!
+interface Eth1/1
+ description FED_DC2-B2_PO5_20G
+!
+interface PO5.3066
+ description FED_PCOM_DC2-B2_PO5_20G
+ vrf member PCOM
+encapsulation dot1q 3066
+logging event port link-status
+no ip redirects
+ip address 192.131.240.222/30
+no ipv6 redirects
+
+interface PO5.1502
+ description FED_RVP_NOOBA_DC2-B2_PO5_20G
+ vrf member RVP_NOOBA
+encapsulation dot1q 1502
+logging event port link-status
+no ip redirects
+ip address 192.0.21.69/27
+no ipv6 redirects
+
+interface PO5.2417
+ description FED_RVP_SHAREDSERVICES_DC2-B2_PO5_20G
+ vrf member RVP_SHAREDSERVICES
+encapsulation dot1q 2417
+logging event port link-status
+no ip redirects
+ip address 192.2.248.62/30
+no ipv6 redirects
+
+interface PO5.2412
+ description FED_RVP_CDN_DC2-B2_PO5_20G
+ vrf member RVP_CDN
+encapsulation dot1q 2412
+logging event port link-status
+no ip redirects
+ip address 192.4.116.6/30
+no ipv6 redirects
+
+interface PO5.3176
+ description FED_HCOM_DC2-B2_PO5_20G
+ vrf member HCOM
+encapsulation dot1q 3176
+logging event port link-status
+no ip redirects
+ip address 192.131.241.238/30
+no ipv6 redirects
+
+interface PO5.2664
+ description FED_RVP_IBFS_SGII_DC2-B2_PO5_20G
+ vrf member RVP_IBFS_SGII
+encapsulation dot1q 2664
+logging event port link-status
+no ip redirects
+ip address 192.4.178.18/30
+no ipv6 redirects
+
+interface PO5.3382
+ description FED_RVP_ITEC_DC2-B2_PO5_20G
+ vrf member RVP_ITEC
+encapsulation dot1q 3382
+logging event port link-status
+no ip redirects
+ip address 192.2.181.33/30
+no ipv6 redirects
+
+interface PO5.2436
+ description FED_RVP_ALD_SRV_DC2-B2_PO5_20G
+ vrf member RVP_ALD_SRV
+encapsulation dot1q 2436
+logging event port link-status
+no ip redirects
+ip address 192.2.168.18/30
+no ipv6 redirects
+
+interface PO5.2661
+ description FED_RVP_IBFS_SSZ_DC2-B2_PO5_20G
+ vrf member RVP_IBFS_SSZ
+encapsulation dot1q 2661
+logging event port link-status
+no ip redirects
+ip address 192.4.176.18/30
+no ipv6 redirects
+
+interface PO5.2451
+ description FED_RVP_ASSU_SRV_DC2-B2_PO5_20G
+ vrf member RVP_ASSU_SRV
+encapsulation dot1q 2451
+logging event port link-status
+no ip redirects
+ip address 192.2.209.6/30
+no ipv6 redirects
+
+interface PO5.3241
+ description FED_RIX_DC2-B2_PO5_20G
+ vrf member RIX
+encapsulation dot1q 3241
+logging event port link-status
+no ip redirects
+ip address 192.2.24.118/30
+no ipv6 redirects
+
+interface PO5.2669
+ description FED_RVP_IBFS_SGII_UAT_DC2-B2_PO5_20G
+ vrf member RVP_IBFS_SGII_UAT
+encapsulation dot1q 2669
+logging event port link-status
+no ip redirects
+ip address 192.4.198.18/30
+no ipv6 redirects
+
+interface PO5.3105
+ description FED_HCITS_DC2-B2_PO5_20G
+ vrf member HCITS
+encapsulation dot1q 3105
+logging event port link-status
+no ip redirects
+ip address 192.131.241.65/30
+no ipv6 redirects
+
+interface PO5.2471
+ description FED_RVP_IBFS_DEV_DC2-B2_PO5_20G
+ vrf member RVP_IBFS_DEV
+encapsulation dot1q 2471
+logging event port link-status
+no ip redirects
+ip address 192.2.176.6/30
+no ipv6 redirects
+
+interface PO5.2422
+ description FED_RVP_SGSS_NAN-HDC_DC2-B2_PO5_20G
+ vrf member RVP_SGSS_NAN-HDC
+encapsulation dot1q 2422
+logging event port link-status
+no ip redirects
+ip address 192.2.16.62/30
+no ipv6 redirects
+
+interface PO5.2409
+ description FED_RVP_SGSS_PAR-PDC_DC2-B2_PO5_20G
+ vrf member RVP_SGSS_PAR-PDC
+encapsulation dot1q 2409
+logging event port link-status
+no ip redirects
+ip address 192.4.139.6/30
+no ipv6 redirects
+
+interface PO5.2425
+ description FED_RVP_SGSS_NAN-PDC_DC2-B2_PO5_20G
+ vrf member RVP_SGSS_NAN-PDC
+encapsulation dot1q 2425
+logging event port link-status
+no ip redirects
+ip address 192.2.14.62/30
+no ipv6 redirects
+
+interface PO5.2404
+ description FED_RVP_SGSS_PAR-HDC_DC2-B2_PO5_20G
+ vrf member RVP_SGSS_PAR-HDC
+encapsulation dot1q 2404
+logging event port link-status
+no ip redirects
+ip address 192.208.96.58/30
+no ipv6 redirects
+
+interface PO5.2442
+ description FED_RVP_CDN_HOB_DC2-B2_PO5_20G
+ vrf member RVP_CDN_HOB
+encapsulation dot1q 2442
+logging event port link-status
+no ip redirects
+ip address 192.2.243.6/30
+no ipv6 redirects
+
+interface PO5.2462
+ description FED_RVP_CDN-Dev_DC2-B2_PO5_20G
+ vrf member RVP_CDN-Dev
+encapsulation dot1q 2462
+logging event port link-status
+no ip redirects
+ip address 192.2.158.10/30
+no ipv6 redirects
+
+interface PO5.2446
+ description FED_RVP_CDN_HOT_DC2-B2_PO5_20G
+ vrf member RVP_CDN_HOT
+encapsulation dot1q 2446
+logging event port link-status
+no ip redirects
+ip address 192.2.253.6/30
+no ipv6 redirects
+
+interface PO5.3095
+ description FED_DCITS_DC2-B2_PO5_20G
+ vrf member DCITS
+encapsulation dot1q 3095
+logging event port link-status
+no ip redirects
+ip address 192.131.241.41/30
+no ipv6 redirects
+
+interface PO5.2573
+ description FED_RVP_NSX_DC2-B2_PO5_20G
+ vrf member RVP_NSX
+encapsulation dot1q 2573
+logging event port link-status
+no ip redirects
+ip address 192.2.178.42/30
+no ipv6 redirects
+
+!
+!
+end
+copy running-config startup-config 
+
+
+!******************************************************** 
+ DC2A4-CLOUD-CFD-vdc2: Checks 
+!******************************************************** 
+!Check if the BFD feature is enable
+show feature | include bfd
+!
+!##################################################################################### 
+! Step 2 Rollout Standardisation :DC2A4-CLOUD-CFD-vdc2
+!#################################################################################### 
+!
+!--------------------------------------------------------
+!DC2A4-CLOUD-CFD-vdc2: interface Standardisation:
+!--------------------------------------------------------
+!
+! ==> Note: BFD is not supported Vlan: All Vlan interface must be deleted and recreated as sub interfaces
+!
+! interface Ten or GigabitEthernet
+!
+! a) Check the description format: FED_<VRF NAME>_<CE NAME>_SxPx_BW_TELCO_NUMBER
+! B) If TElco Link add: dampening 
+! C) If not native speed: bandwidth x00000
+! C) logging event link-status
+! D) Check the correct WRR
+!
+!sub-interface Ten or GigabitEthernet.wxyz
+!
+! a) Check the description format: FED_<VRF NAME>_<CE NAME>_SxPx_BW
+! B) Add if missIN ing: no ip redirects,no ip unreachables, no ip proxy-arp
+! C) Add BFD: bfd  interval 500 min_rx 500 multiplier 3 /!\ for Etherchannels: bfd interval 750 min_rx 750 multiplier 3
+!
+interface Eth1/1
+ !
+!
+interface PO5.3066
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.1502
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2417
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2412
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.3176
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2664
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.3382
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2436
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2661
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2451
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.3241
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2669
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.3105
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2471
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2422
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2409
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2425
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2404
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2442
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2462
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2446
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.3095
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+interface PO5.2573
+ no ip redirects 
+ no ip unreachables 
+ no ip proxy-arp 
+ bfd interval 500 min_rx 500 multiplier 3
+!
+!
+!--------------------------------------------------------
+! DC2A4-CLOUD-CFD-vdc2: Update all the eBGP peers eBGP
+!--------------------------------------------------------
+!
+! a) Check the description format: eBGP <PE name>_<VRF name>>
+! B) Add if missing: neighbor <PE IP@> fall-over bfd
+! C) Delete route-maps set metrics when possible /!\ to be confirmed with HSG\MBS
+! D) Add the per neighbor route-maps for plan selection Option 1 (without static Metric) or Option 2 (static Metrics)
+!
+router bgp 64923
+!
+vrf PCOM
+address-family ipv4 unicast
+neighbors 192.131.240.221 remote-as 64911 
+bfd
+description PCOM_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_SHAREDSERVICES
+address-family ipv4 unicast
+neighbors 192.2.248.61 remote-as 64911 
+bfd
+description RVP_SHAREDSERVICES_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_CDN
+address-family ipv4 unicast
+neighbors 192.4.116.5 remote-as 64911 
+bfd
+description RVP_CDN_DC2-B2
+!
+router bgp 64923
+!
+vrf HCOM
+address-family ipv4 unicast
+neighbors 192.131.241.237 remote-as 64911 
+bfd
+description HCOM_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_IBFS_SGII
+address-family ipv4 unicast
+neighbors 192.4.178.17 remote-as 64911 
+bfd
+description RVP_IBFS_SGII_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_ITEC
+address-family ipv4 unicast
+neighbors 192.2.181.34 remote-as 64911 
+bfd
+description RVP_ITEC_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_ALD_SRV
+address-family ipv4 unicast
+neighbors 192.2.168.17 remote-as 64911 
+bfd
+description RVP_ALD_SRV_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_IBFS_SSZ
+address-family ipv4 unicast
+neighbors 192.4.176.17 remote-as 64911 
+bfd
+description RVP_IBFS_SSZ_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_ASSU_SRV
+address-family ipv4 unicast
+neighbors 192.2.209.5 remote-as 64911 
+bfd
+description RVP_ASSU_SRV_DC2-B2
+!
+router bgp 64923
+!
+vrf RIX
+address-family ipv4 unicast
+neighbors 192.2.24.117 remote-as 64911 
+bfd
+description RIX_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_IBFS_SGII_UAT
+address-family ipv4 unicast
+neighbors 192.4.198.17 remote-as 64911 
+bfd
+description RVP_IBFS_SGII_UAT_DC2-B2
+!
+router bgp 64923
+!
+vrf HCITS
+address-family ipv4 unicast
+neighbors 192.131.241.66 remote-as 64911 
+bfd
+description HCITS_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_IBFS_DEV
+address-family ipv4 unicast
+neighbors 192.2.176.5 remote-as 64911 
+bfd
+description RVP_IBFS_DEV_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_SGSS_NAN-HDC
+address-family ipv4 unicast
+neighbors 192.2.16.61 remote-as 64911 
+bfd
+description RVP_SGSS_NAN-HDC_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_SGSS_PAR-PDC
+address-family ipv4 unicast
+neighbors 192.4.139.5 remote-as 64911 
+bfd
+description RVP_SGSS_PAR-PDC_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_SGSS_NAN-PDC
+address-family ipv4 unicast
+neighbors 192.2.14.61 remote-as 64911 
+bfd
+description RVP_SGSS_NAN-PDC_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_SGSS_PAR-HDC
+address-family ipv4 unicast
+neighbors 192.208.96.57 remote-as 64911 
+bfd
+description RVP_SGSS_PAR-HDC_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_CDN_HOB
+address-family ipv4 unicast
+neighbors 192.2.243.5 remote-as 64911 
+bfd
+description RVP_CDN_HOB_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_CDN-Dev
+address-family ipv4 unicast
+neighbors 192.2.158.9 remote-as 64911 
+bfd
+description RVP_CDN-Dev_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_CDN_HOT
+address-family ipv4 unicast
+neighbors 192.2.253.5 remote-as 64911 
+bfd
+description RVP_CDN_HOT_DC2-B2
+!
+router bgp 64923
+!
+vrf DCITS
+address-family ipv4 unicast
+neighbors 192.131.241.42 remote-as 64911 
+bfd
+description DCITS_DC2-B2
+!
+router bgp 64923
+!
+vrf RVP_NSX
+address-family ipv4 unicast
+neighbors 192.2.178.41 remote-as 64911 
+bfd
+description RVP_NSX_DC2-B2
+!
+! 
+
+   
+ 
+### The neibhor description is not as per standard #### 
+
+!--------------------------------------------------------
+! DC2A4-CLOUD-CFD-vdc2: Update all the eBGP peers eBGP
+!--------------------------------------------------------
+!#####################################################################################
+! Step 4 Rollout PE-CE IN interconnection reactivation
+! ####################################################################################
+!
+!--------------------------------------------------------	 
+!  DC2A4-CLOUD-CFD-vdc2: Enable the PE<=>CE interface
+!--------------------------------------------------------
+!	
+!	 
+interface Eth1/1
+ no shutdown
+!
+interface PO5.3066
+ no shutdown
+!
+interface PO5.1502
+ no shutdown
+!
+interface PO5.2417
+ no shutdown
+!
+interface PO5.2412
+ no shutdown
+!
+interface PO5.3176
+ no shutdown
+!
+interface PO5.2664
+ no shutdown
+!
+interface PO5.3382
+ no shutdown
+!
+interface PO5.2436
+ no shutdown
+!
+interface PO5.2661
+ no shutdown
+!
+interface PO5.2451
+ no shutdown
+!
+interface PO5.3241
+ no shutdown
+!
+interface PO5.2669
+ no shutdown
+!
+interface PO5.3105
+ no shutdown
+!
+interface PO5.2471
+ no shutdown
+!
+interface PO5.2422
+ no shutdown
+!
+interface PO5.2409
+ no shutdown
+!
+interface PO5.2425
+ no shutdown
+!
+interface PO5.2404
+ no shutdown
+!
+interface PO5.2442
+ no shutdown
+!
+interface PO5.2462
+ no shutdown
+!
+interface PO5.2446
+ no shutdown
+!
+interface PO5.3095
+ no shutdown
+!
+interface PO5.2573
+ no shutdown
+!
+! 
+copy running config startup-config
+#######################################################################
+# Post Checks CE DC2A4-CLOUD-CFD-vdc2
+####################################################################### 
+
+!
+sh int status | in Eth1/1
+!
+show interfaces Eth1/1 | in error
+!
+ 
+sh bgp vrf all summary | in 192.131.240.221
+!
+ 
+ 
+sh bgp vrf all summary | in 192.2.248.61
+!
+ 
+sh bgp vrf all summary | in 192.4.116.5
+!
+ 
+sh bgp vrf all summary | in 192.131.241.237
+!
+ 
+sh bgp vrf all summary | in 192.4.178.17
+!
+ 
+sh bgp vrf all summary | in 192.2.181.34
+!
+ 
+sh bgp vrf all summary | in 192.2.168.17
+!
+ 
+sh bgp vrf all summary | in 192.4.176.17
+!
+ 
+sh bgp vrf all summary | in 192.2.209.5
+!
+ 
+sh bgp vrf all summary | in 192.2.24.117
+!
+ 
+sh bgp vrf all summary | in 192.4.198.17
+!
+ 
+sh bgp vrf all summary | in 192.131.241.66
+!
+ 
+sh bgp vrf all summary | in 192.2.176.5
+!
+ 
+sh bgp vrf all summary | in 192.2.16.61
+!
+ 
+sh bgp vrf all summary | in 192.4.139.5
+!
+ 
+sh bgp vrf all summary | in 192.2.14.61
+!
+ 
+sh bgp vrf all summary | in 192.208.96.57
+!
+ 
+sh bgp vrf all summary | in 192.2.243.5
+!
+ 
+sh bgp vrf all summary | in 192.2.158.9
+!
+ 
+sh bgp vrf all summary | in 192.2.253.5
+!
+ 
+sh bgp vrf all summary | in 192.131.241.42
+!
+ 
+sh bgp vrf all summary | in 192.2.178.41
+!
+!
+!

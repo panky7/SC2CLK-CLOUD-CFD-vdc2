@@ -1,0 +1,1381 @@
+!--------------------------------------------------------	 
+!PRE-Check DC2-B1: Step 0 Capture the O/P of the below commands for comparison after the change
+!--------------------------------------------------------	
+!
+show ip int brief | in BE5
+!
+show interfaces BE5 | in errors
+!
+ 
+ 
+sh bgp vrf all summary | in 192.4.178.14
+!
+ 
+sh bgp vrf all summary | in 192.131.240.214
+!
+ 
+sh bgp vrf all summary | in 192.131.241.61
+!
+ 
+sh bgp vrf all summary | in 192.2.158.2
+!
+ 
+sh bgp vrf all summary | in 192.4.198.14
+!
+ 
+sh bgp vrf all summary | in 192.2.253.2
+!
+ 
+sh bgp vrf all summary | in 192.2.243.2
+!
+ 
+sh bgp vrf all summary | in 192.4.176.14
+!
+ 
+sh bgp vrf all summary | in 192.2.14.58
+!
+ 
+sh bgp vrf all summary | in 192.208.96.54
+!
+ 
+sh bgp vrf all summary | in 192.2.16.58
+!
+ 
+sh bgp vrf all summary | in 192.131.241.37
+!
+ 
+sh bgp vrf all summary | in 192.131.241.230
+!
+ 
+sh bgp vrf all summary | in 192.2.176.2
+!
+ 
+sh bgp vrf all summary | in 192.2.168.14
+!
+ 
+sh bgp vrf all summary | in 192.2.181.29
+!
+ 
+sh bgp vrf all summary | in 192.2.178.38
+!
+ 
+sh bgp vrf all summary | in 192.2.209.2
+!
+ 
+sh bgp vrf all summary | in 192.4.139.2
+!
+ 
+sh bgp vrf all summary | in 192.2.248.58
+!
+ 
+sh bgp vrf all summary | in 192.4.116.2
+!
+!
+!
+!
+!
+
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.14 routes 
+!
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.14 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.14 advertised-routes
+!
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.14 advertised-count
+
+sh bgp vrf PCOM neighbors 192.131.240.214 routes 
+!
+sh bgp vrf PCOM neighbors 192.131.240.214 routes | in Processed
+!
+sh bgp vrf PCOM neighbors 192.131.240.214 advertised-routes
+!
+sh bgp vrf PCOM neighbors 192.131.240.214 advertised-count
+
+sh bgp vrf HCITS neighbors 192.131.241.61 routes 
+!
+sh bgp vrf HCITS neighbors 192.131.241.61 routes | in Processed
+!
+sh bgp vrf HCITS neighbors 192.131.241.61 advertised-routes
+!
+sh bgp vrf HCITS neighbors 192.131.241.61 advertised-count
+
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 routes 
+!
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 advertised-routes
+!
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 advertised-count
+
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.14 routes 
+!
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.14 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.14 advertised-routes
+!
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.14 advertised-count
+
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.2 routes 
+!
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.2 advertised-routes
+!
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.2 advertised-count
+
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 routes 
+!
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 advertised-routes
+!
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 advertised-count
+
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.14 routes 
+!
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.14 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.14 advertised-routes
+!
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.14 advertised-count
+
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.58 routes 
+!
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.58 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.58 advertised-routes
+!
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.58 advertised-count
+
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.54 routes 
+!
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.54 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.54 advertised-routes
+!
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.54 advertised-count
+
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.58 routes 
+!
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.58 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.58 advertised-routes
+!
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.58 advertised-count
+
+sh bgp vrf DCITS neighbors 192.131.241.37 routes 
+!
+sh bgp vrf DCITS neighbors 192.131.241.37 routes | in Processed
+!
+sh bgp vrf DCITS neighbors 192.131.241.37 advertised-routes
+!
+sh bgp vrf DCITS neighbors 192.131.241.37 advertised-count
+
+sh bgp vrf HCOM neighbors 192.131.241.230 routes 
+!
+sh bgp vrf HCOM neighbors 192.131.241.230 routes | in Processed
+!
+sh bgp vrf HCOM neighbors 192.131.241.230 advertised-routes
+!
+sh bgp vrf HCOM neighbors 192.131.241.230 advertised-count
+
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.2 routes 
+!
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.2 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.2 advertised-routes
+!
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.2 advertised-count
+
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.14 routes 
+!
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.14 routes | in Processed
+!
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.14 advertised-routes
+!
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.14 advertised-count
+
+sh bgp vrf RVP_ITEC neighbors 192.2.181.29 routes 
+!
+sh bgp vrf RVP_ITEC neighbors 192.2.181.29 routes | in Processed
+!
+sh bgp vrf RVP_ITEC neighbors 192.2.181.29 advertised-routes
+!
+sh bgp vrf RVP_ITEC neighbors 192.2.181.29 advertised-count
+
+sh bgp vrf RVP_NSX neighbors 192.2.178.38 routes 
+!
+sh bgp vrf RVP_NSX neighbors 192.2.178.38 routes | in Processed
+!
+sh bgp vrf RVP_NSX neighbors 192.2.178.38 advertised-routes
+!
+sh bgp vrf RVP_NSX neighbors 192.2.178.38 advertised-count
+
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.2 routes 
+!
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.2 routes | in Processed
+!
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.2 advertised-routes
+!
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.2 advertised-count
+
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.2 routes 
+!
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.2 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.2 advertised-routes
+!
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.2 advertised-count
+
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.58 routes 
+!
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.58 routes | in Processed
+!
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.58 advertised-routes
+!
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.58 advertised-count
+
+sh bgp vrf RVP_CDN neighbors 192.4.116.2 routes 
+!
+sh bgp vrf RVP_CDN neighbors 192.4.116.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN neighbors 192.4.116.2 advertised-routes
+!
+sh bgp vrf RVP_CDN neighbors 192.4.116.2 advertised-count
+!
+!#####################################################################################	 
+!Step 1A Rollout:DC2-B1 => change the description of  sub-interfaces for DC2A3-CLOUD-CFD-vdc2
+!####################################################################################	 
+!
+!
+interface BE5
+ description FED_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+!
+interface BE5.1502
+ description FED_RVP_NOOBA_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2663
+ description FED_RVP_IBFS_SGII_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.3064
+ description FED_PCOM_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.3104
+ description FED_HCITS_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2460
+ description FED_RVP_CDN-Dev_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2668
+ description FED_RVP_IBFS_SGII_UAT_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2445
+ description FED_RVP_CDN_HOT_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2441
+ description FED_RVP_CDN_HOB_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2660
+ description FED_RVP_IBFS_SSZ_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2424
+ description FED_RVP_SGSS_NAN-PDC_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2403
+ description FED_RVP_SGSS_PAR-HDC_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2421
+ description FED_RVP_SGSS_NAN-HDC_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.3094
+ description FED_DCITS_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.3174
+ description FED_HCOM_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2470
+ description FED_RVP_IBFS_DEV_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2435
+ description FED_RVP_ALD_SRV_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.3381
+ description FED_RVP_ITEC_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2572
+ description FED_RVP_NSX_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2450
+ description FED_RVP_ASSU_SRV_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2411
+ description FED_RVP_SGSS_PAR-PDC_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2416
+ description FED_RVP_SHAREDSERVICES_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+interface BE5.2414
+ description FED_RVP_CDN_DC2A3-CLOUD-CFD-vdc2_Po5_20G
+!
+!
+commit comment JUMP-TICKET:Interface Description
+!
+!--------------------------------------------------------	 
+!DC2-B1 Shut down the BGP peerings and change the description for all the peers with VRF 
+!--------------------------------------------------------
+!
+router bgp 64911
+!
+!
+vrf RVP_IBFS_SGII
+neighbors 192.4.178.14
+description RVP_IBFS_SGII_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf PCOM
+neighbors 192.131.240.214
+description PCOM_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf HCITS
+neighbors 192.131.241.61
+description HCITS_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_CDN-Dev
+neighbors 192.2.158.2
+description RVP_CDN-Dev_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_IBFS_SGII_UAT
+neighbors 192.4.198.14
+description RVP_IBFS_SGII_UAT_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_CDN_HOT
+neighbors 192.2.253.2
+description RVP_CDN_HOT_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_CDN_HOB
+neighbors 192.2.243.2
+description RVP_CDN_HOB_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_IBFS_SSZ
+neighbors 192.4.176.14
+description RVP_IBFS_SSZ_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_SGSS_NAN-PDC
+neighbors 192.2.14.58
+description RVP_SGSS_NAN-PDC_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_SGSS_PAR-HDC
+neighbors 192.208.96.54
+description RVP_SGSS_PAR-HDC_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_SGSS_NAN-HDC
+neighbors 192.2.16.58
+description RVP_SGSS_NAN-HDC_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf DCITS
+neighbors 192.131.241.37
+description DCITS_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf HCOM
+neighbors 192.131.241.230
+description HCOM_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_IBFS_DEV
+neighbors 192.2.176.2
+description RVP_IBFS_DEV_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_ALD_SRV
+neighbors 192.2.168.14
+description RVP_ALD_SRV_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_ITEC
+neighbors 192.2.181.29
+description RVP_ITEC_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_NSX
+neighbors 192.2.178.38
+description RVP_NSX_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_ASSU_SRV
+neighbors 192.2.209.2
+description RVP_ASSU_SRV_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_SGSS_PAR-PDC
+neighbors 192.4.139.2
+description RVP_SGSS_PAR-PDC_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_SHAREDSERVICES
+neighbors 192.2.248.58
+description RVP_SHAREDSERVICES_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+vrf RVP_CDN
+neighbors 192.4.116.2
+description RVP_CDN_DC2A3-CLOUD-CFD-vdc2
+bfd fast-detect
+bfd multiplier 3
+bfd minimim-interval 500
+shutdown
+!
+!
+commit comment JUMP-TICKET:BGP Description
+!
+!--------------------------------------------------------
+!DC2-B1: Shutdown the PE<=>CE  interface
+!--------------------------------------------------------
+!
+interface BE5
+shutdown
+!
+interface BE5.1502
+shutdown
+!
+interface BE5.2663
+shutdown
+!
+interface BE5.3064
+shutdown
+!
+interface BE5.3104
+shutdown
+!
+interface BE5.2460
+shutdown
+!
+interface BE5.2668
+shutdown
+!
+interface BE5.2445
+shutdown
+!
+interface BE5.2441
+shutdown
+!
+interface BE5.2660
+shutdown
+!
+interface BE5.2424
+shutdown
+!
+interface BE5.2403
+shutdown
+!
+interface BE5.2421
+shutdown
+!
+interface BE5.3094
+shutdown
+!
+interface BE5.3174
+shutdown
+!
+interface BE5.2470
+shutdown
+!
+interface BE5.2435
+shutdown
+!
+interface BE5.3381
+shutdown
+!
+interface BE5.2572
+shutdown
+!
+interface BE5.2450
+shutdown
+!
+interface BE5.2411
+shutdown
+!
+interface BE5.2416
+shutdown
+!
+interface BE5.2414
+shutdown
+!
+!
+commit comment JUMP-TICKET: Interface shutdown
+!********************************************************	   
+!Checks-DC2-B1	   
+!********************************************************
+
+!
+show ip int brief | in BE5
+!
+show interfaces BE5 | in errors
+!
+ 
+ 
+sh bgp vrf all summary | in 192.4.178.14
+!
+ 
+sh bgp vrf all summary | in 192.131.240.214
+!
+ 
+sh bgp vrf all summary | in 192.131.241.61
+!
+ 
+sh bgp vrf all summary | in 192.2.158.2
+!
+ 
+sh bgp vrf all summary | in 192.4.198.14
+!
+ 
+sh bgp vrf all summary | in 192.2.253.2
+!
+ 
+sh bgp vrf all summary | in 192.2.243.2
+!
+ 
+sh bgp vrf all summary | in 192.4.176.14
+!
+ 
+sh bgp vrf all summary | in 192.2.14.58
+!
+ 
+sh bgp vrf all summary | in 192.208.96.54
+!
+ 
+sh bgp vrf all summary | in 192.2.16.58
+!
+ 
+sh bgp vrf all summary | in 192.131.241.37
+!
+ 
+sh bgp vrf all summary | in 192.131.241.230
+!
+ 
+sh bgp vrf all summary | in 192.2.176.2
+!
+ 
+sh bgp vrf all summary | in 192.2.168.14
+!
+ 
+sh bgp vrf all summary | in 192.2.181.29
+!
+ 
+sh bgp vrf all summary | in 192.2.178.38
+!
+ 
+sh bgp vrf all summary | in 192.2.209.2
+!
+ 
+sh bgp vrf all summary | in 192.4.139.2
+!
+ 
+sh bgp vrf all summary | in 192.2.248.58
+!
+ 
+sh bgp vrf all summary | in 192.4.116.2
+!
+!
+!==> Quick Double-check that neighbors are down
+!
+!
+! ==> Note: BFD is not supported Vlan: All Vlan interface must be deleted and recreated as sub interfaces
+!
+! interface Ten or GigabitEthernet
+!
+! a) Check the description format: FED_<VRF NAME>_<CE NAME>_SxPx_BW_TELCO_NUMBER
+! B) If TElco Link add: dampening 
+! C) If not native speed: bandwidth x00000
+! C) logging event link-status
+! D) Check the correct WRR
+!
+!sub-interface Ten or GigabitEthernet.wxyz
+!
+! a) Check the description format: FED_<VRF NAME>_<CE NAME>_SxPx_BW
+! B) Add if missIN ing: no ip redirects,no ip unreachables, no ip proxy-arp
+! C) Add BFD: bfd  interval 500 min_rx 500 multiplier 3 /!\ for Etherchannels: bfd interval 750 min_rx 750 multiplier 3
+!
+!#####################################################################################
+! Step 3 Rollout Standardisation :DC2-B1
+! ####################################################################################
+!	 
+!
+!--------------------------------------------------------
+! DC2-B1: interface Standardisation:
+!--------------------------------------------------------
+!
+interface BE5
+ service-policy input 20GE_PMAP_IN 
+ service-policy output 20GE_PMAP_OUT
+!
+interface BE5.1502
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2663
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.3064
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.3104
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2460
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2668
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2445
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2441
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2660
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2424
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2403
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2421
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.3094
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.3174
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2470
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2435
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.3381
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2572
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2450
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2411
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2416
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+interface BE5.2414
+service-policy input 20GE_PMAP_IN 
+service-policy output 20GE_PMAP_OUT 
+ipv4 unreachables disable
+!
+!
+commit comment JUMP-TICKET: Interface standarization
+!
+!--------------------------------------------------------
+! DC2-B1 eBGP with RED or BLUE Plan + BFD (Option 1 without static Metrics) and remove the existing route-maps if any
+!--------------------------------------------------------
+!
+!
+route-policy eBGP:RED-PLAN-FROM-AS64924:IN 
+ pass
+# Empty to be used for manual switchover
+end-policy
+!
+!
+extcommunity-set rt comm_96
+  64924:9999
+end-set
+!
+route-policy eBGP:RED-PLAN-TO-AS64924:OUT
+  if (extcommunity rt matches-any comm_96) then
+    prepend as-path 64911 5
+  else
+   pass
+  endif
+end-policy
+!
+!
+router bgp 64911
+!
+vrf RVP_IBFS_SGII
+neighbors 192.4.178.14
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf PCOM
+neighbors 192.131.240.214
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf HCITS
+neighbors 192.131.241.61
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_CDN-Dev
+neighbors 192.2.158.2
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_IBFS_SGII_UAT
+neighbors 192.4.198.14
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_CDN_HOT
+neighbors 192.2.253.2
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_CDN_HOB
+neighbors 192.2.243.2
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_IBFS_SSZ
+neighbors 192.4.176.14
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_SGSS_NAN-PDC
+neighbors 192.2.14.58
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_SGSS_PAR-HDC
+neighbors 192.208.96.54
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_SGSS_NAN-HDC
+neighbors 192.2.16.58
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf DCITS
+neighbors 192.131.241.37
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf HCOM
+neighbors 192.131.241.230
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_IBFS_DEV
+neighbors 192.2.176.2
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_ALD_SRV
+neighbors 192.2.168.14
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_ITEC
+neighbors 192.2.181.29
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_NSX
+neighbors 192.2.178.38
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_ASSU_SRV
+neighbors 192.2.209.2
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_SGSS_PAR-PDC
+neighbors 192.4.139.2
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_SHAREDSERVICES
+neighbors 192.2.248.58
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+vrf RVP_CDN
+neighbors 192.4.116.2
+address-family ipv4 unicast
+route-policy eBGP:RED-PLAN-from-AS664924:IN in
+route-policy eBGP:RED-PLAN-to-AS64924:OUT out
+!
+!
+!
+commit comment JUMP-TICKET:BGP Standarization
+!
+!#####################################################################################
+! Step 4 Rollout PE-CE IN interconnection reactivation
+!####################################################################################
+!
+!--------------------------------------------------------	 
+! DC2-B1: Enable the PE<=>CE interface
+!--------------------------------------------------------
+!	 
+interface BE5
+ no shutdown
+!
+interface BE5.1502
+ no shutdown
+!
+interface BE5.2663
+ no shutdown
+!
+interface BE5.3064
+ no shutdown
+!
+interface BE5.3104
+ no shutdown
+!
+interface BE5.2460
+ no shutdown
+!
+interface BE5.2668
+ no shutdown
+!
+interface BE5.2445
+ no shutdown
+!
+interface BE5.2441
+ no shutdown
+!
+interface BE5.2660
+ no shutdown
+!
+interface BE5.2424
+ no shutdown
+!
+interface BE5.2403
+ no shutdown
+!
+interface BE5.2421
+ no shutdown
+!
+interface BE5.3094
+ no shutdown
+!
+interface BE5.3174
+ no shutdown
+!
+interface BE5.2470
+ no shutdown
+!
+interface BE5.2435
+ no shutdown
+!
+interface BE5.3381
+ no shutdown
+!
+interface BE5.2572
+ no shutdown
+!
+interface BE5.2450
+ no shutdown
+!
+interface BE5.2411
+ no shutdown
+!
+interface BE5.2416
+ no shutdown
+!
+interface BE5.2414
+ no shutdown
+!
+!
+commit Jump Ticket: No shutdown Interface
+! 
+!********************************************************	 
+!Checks DC2-B1
+!********************************************************	
+!
+!
+show ip int brief | in BE5
+!
+show interfaces BE5 | in errors
+!
+!--------------------------------------------------------	 
+!DC2-B1: Enable all eBGPS peerings for all the interconnections' VRF
+!--------------------------------------------------------	 
+!
+!
+router bgp 64911
+!
+vrf RVP_IBFS_SGII
+neighbors 192.4.178.14
+no shutdown
+!
+vrf PCOM
+neighbors 192.131.240.214
+no shutdown
+!
+vrf HCITS
+neighbors 192.131.241.61
+no shutdown
+!
+vrf RVP_CDN-Dev
+neighbors 192.2.158.2
+no shutdown
+!
+vrf RVP_IBFS_SGII_UAT
+neighbors 192.4.198.14
+no shutdown
+!
+vrf RVP_CDN_HOT
+neighbors 192.2.253.2
+no shutdown
+!
+vrf RVP_CDN_HOB
+neighbors 192.2.243.2
+no shutdown
+!
+vrf RVP_IBFS_SSZ
+neighbors 192.4.176.14
+no shutdown
+!
+vrf RVP_SGSS_NAN-PDC
+neighbors 192.2.14.58
+no shutdown
+!
+vrf RVP_SGSS_PAR-HDC
+neighbors 192.208.96.54
+no shutdown
+!
+vrf RVP_SGSS_NAN-HDC
+neighbors 192.2.16.58
+no shutdown
+!
+vrf DCITS
+neighbors 192.131.241.37
+no shutdown
+!
+vrf HCOM
+neighbors 192.131.241.230
+no shutdown
+!
+vrf RVP_IBFS_DEV
+neighbors 192.2.176.2
+no shutdown
+!
+vrf RVP_ALD_SRV
+neighbors 192.2.168.14
+no shutdown
+!
+vrf RVP_ITEC
+neighbors 192.2.181.29
+no shutdown
+!
+vrf RVP_NSX
+neighbors 192.2.178.38
+no shutdown
+!
+vrf RVP_ASSU_SRV
+neighbors 192.2.209.2
+no shutdown
+!
+vrf RVP_SGSS_PAR-PDC
+neighbors 192.4.139.2
+no shutdown
+!
+vrf RVP_SHAREDSERVICES
+neighbors 192.2.248.58
+no shutdown
+!
+vrf RVP_CDN
+neighbors 192.4.116.2
+no shutdown
+!
+!
+commit comment JUMP-TICKET:BGP no-shutdown
+!
+!********************************************************	 
+!Post Checks PE DC2-B1
+!********************************************************	 
+!	 
+!
+!==> Quick Double-check no error on the interfaces 
+!
+!
+show ip int brief | in BE5
+!
+show interfaces BE5 | in errors
+!
+ 
+ 
+sh bgp vrf all summary | in 192.4.178.14
+!
+ 
+sh bgp vrf all summary | in 192.131.240.214
+!
+ 
+sh bgp vrf all summary | in 192.131.241.61
+!
+ 
+sh bgp vrf all summary | in 192.2.158.2
+!
+ 
+sh bgp vrf all summary | in 192.4.198.14
+!
+ 
+sh bgp vrf all summary | in 192.2.253.2
+!
+ 
+sh bgp vrf all summary | in 192.2.243.2
+!
+ 
+sh bgp vrf all summary | in 192.4.176.14
+!
+ 
+sh bgp vrf all summary | in 192.2.14.58
+!
+ 
+sh bgp vrf all summary | in 192.208.96.54
+!
+ 
+sh bgp vrf all summary | in 192.2.16.58
+!
+ 
+sh bgp vrf all summary | in 192.131.241.37
+!
+ 
+sh bgp vrf all summary | in 192.131.241.230
+!
+ 
+sh bgp vrf all summary | in 192.2.176.2
+!
+ 
+sh bgp vrf all summary | in 192.2.168.14
+!
+ 
+sh bgp vrf all summary | in 192.2.181.29
+!
+ 
+sh bgp vrf all summary | in 192.2.178.38
+!
+ 
+sh bgp vrf all summary | in 192.2.209.2
+!
+ 
+sh bgp vrf all summary | in 192.4.139.2
+!
+ 
+sh bgp vrf all summary | in 192.2.248.58
+!
+ 
+sh bgp vrf all summary | in 192.4.116.2
+!
+!
+!
+!
+!
+
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.14 routes 
+!
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.14 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.14 advertised-routes
+!
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.14 advertised-count
+
+sh bgp vrf PCOM neighbors 192.131.240.214 routes 
+!
+sh bgp vrf PCOM neighbors 192.131.240.214 routes | in Processed
+!
+sh bgp vrf PCOM neighbors 192.131.240.214 advertised-routes
+!
+sh bgp vrf PCOM neighbors 192.131.240.214 advertised-count
+
+sh bgp vrf HCITS neighbors 192.131.241.61 routes 
+!
+sh bgp vrf HCITS neighbors 192.131.241.61 routes | in Processed
+!
+sh bgp vrf HCITS neighbors 192.131.241.61 advertised-routes
+!
+sh bgp vrf HCITS neighbors 192.131.241.61 advertised-count
+
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 routes 
+!
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 advertised-routes
+!
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 advertised-count
+
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.14 routes 
+!
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.14 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.14 advertised-routes
+!
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.14 advertised-count
+
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.2 routes 
+!
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.2 advertised-routes
+!
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.2 advertised-count
+
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 routes 
+!
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 advertised-routes
+!
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 advertised-count
+
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.14 routes 
+!
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.14 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.14 advertised-routes
+!
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.14 advertised-count
+
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.58 routes 
+!
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.58 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.58 advertised-routes
+!
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.58 advertised-count
+
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.54 routes 
+!
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.54 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.54 advertised-routes
+!
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.54 advertised-count
+
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.58 routes 
+!
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.58 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.58 advertised-routes
+!
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.58 advertised-count
+
+sh bgp vrf DCITS neighbors 192.131.241.37 routes 
+!
+sh bgp vrf DCITS neighbors 192.131.241.37 routes | in Processed
+!
+sh bgp vrf DCITS neighbors 192.131.241.37 advertised-routes
+!
+sh bgp vrf DCITS neighbors 192.131.241.37 advertised-count
+
+sh bgp vrf HCOM neighbors 192.131.241.230 routes 
+!
+sh bgp vrf HCOM neighbors 192.131.241.230 routes | in Processed
+!
+sh bgp vrf HCOM neighbors 192.131.241.230 advertised-routes
+!
+sh bgp vrf HCOM neighbors 192.131.241.230 advertised-count
+
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.2 routes 
+!
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.2 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.2 advertised-routes
+!
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.2 advertised-count
+
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.14 routes 
+!
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.14 routes | in Processed
+!
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.14 advertised-routes
+!
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.14 advertised-count
+
+sh bgp vrf RVP_ITEC neighbors 192.2.181.29 routes 
+!
+sh bgp vrf RVP_ITEC neighbors 192.2.181.29 routes | in Processed
+!
+sh bgp vrf RVP_ITEC neighbors 192.2.181.29 advertised-routes
+!
+sh bgp vrf RVP_ITEC neighbors 192.2.181.29 advertised-count
+
+sh bgp vrf RVP_NSX neighbors 192.2.178.38 routes 
+!
+sh bgp vrf RVP_NSX neighbors 192.2.178.38 routes | in Processed
+!
+sh bgp vrf RVP_NSX neighbors 192.2.178.38 advertised-routes
+!
+sh bgp vrf RVP_NSX neighbors 192.2.178.38 advertised-count
+
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.2 routes 
+!
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.2 routes | in Processed
+!
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.2 advertised-routes
+!
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.2 advertised-count
+
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.2 routes 
+!
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.2 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.2 advertised-routes
+!
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.2 advertised-count
+
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.58 routes 
+!
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.58 routes | in Processed
+!
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.58 advertised-routes
+!
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.58 advertised-count
+
+sh bgp vrf RVP_CDN neighbors 192.4.116.2 routes 
+!
+sh bgp vrf RVP_CDN neighbors 192.4.116.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN neighbors 192.4.116.2 advertised-routes
+!
+sh bgp vrf RVP_CDN neighbors 192.4.116.2 advertised-count
+!

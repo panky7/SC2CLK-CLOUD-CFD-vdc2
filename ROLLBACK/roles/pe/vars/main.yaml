@@ -1,0 +1,151 @@
+---
+routers: 
+   - hostname: DC2-B1
+     main_interface: BE5
+     sub_int:
+       BE5.1502:
+         vrf: RVP_NOOBA
+       BE5.2403:
+         vrf: RVP_SGSS_PAR-HDC
+         nei: 192.208.96.54
+       BE5.2411:
+         vrf: RVP_SGSS_PAR-PDC
+         nei: 192.4.139.2
+       BE5.2414:
+         vrf: RVP_CDN
+         nei: 192.4.116.2
+       BE5.2416:
+         vrf: RVP_SHAREDSERVICES
+         nei: 192.2.248.58
+       BE5.2421:
+         vrf: RVP_SGSS_NAN-HDC
+         nei: 192.2.16.58
+       BE5.2424:
+         vrf: RVP_SGSS_NAN-PDC
+         nei: 192.2.14.58
+       BE5.2435:
+         vrf: RVP_ALD_SRV
+         nei: 192.2.168.14
+       BE5.2441:
+         vrf: RVP_CDN_HOB
+         nei: 192.2.243.2
+       BE5.2445:
+         vrf: RVP_CDN_HOT
+         nei: 192.2.253.2
+       BE5.2450:
+         vrf: RVP_ASSU_SRV
+         nei: 192.2.209.2
+       BE5.2460:
+         vrf: RVP_CDN-Dev
+         nei: 192.2.158.2
+       BE5.2470:
+         vrf: RVP_IBFS_DEV
+         nei: 192.2.176.2
+       BE5.2572:
+         vrf: RVP_NSX
+         nei: 192.2.178.38
+       BE5.2660:
+         vrf: RVP_IBFS_SSZ
+         nei: 192.4.176.14
+       BE5.2663:
+         vrf: RVP_IBFS_SGII
+         nei: 192.4.178.14
+       BE5.2668:
+         vrf: RVP_IBFS_SGII_UAT
+         nei: 192.4.198.14
+       BE5.3064:
+         vrf: PCOM
+         nei: 192.131.240.214
+       BE5.3094:
+         vrf: DCITS
+         nei: 192.131.241.37
+       BE5.3104:
+         vrf: HCITS
+         nei: 192.131.241.61
+       BE5.3174:
+         vrf: HCOM
+         nei: 192.131.241.230
+       BE5.3381:
+         vrf: RVP_ITEC
+         nei: 192.2.181.29     
+     remote_as: 64924
+     CE: DC2A3-CLOUD-CFD-vdc2
+     CE_interface: Po5
+     speed: 20G
+     BACKBONE: RED
+   - hostname: DC2-B2
+     main_interface: BE5
+     sub_int:
+       BE5.1502:
+         vrf: RVP_NOOBA
+       BE5.2404:
+         vrf: RVP_SGSS_PAR-HDC
+         nei: 192.208.96.58
+       BE5.2409:
+         vrf: RVP_SGSS_PAR-PDC
+         nei: 192.4.139.6
+       BE5.2412:
+         vrf: RVP_CDN
+         nei: 192.4.116.6
+       BE5.2417:
+         vrf: RVP_SHAREDSERVICES
+         nei: 192.2.248.62
+       BE5.2422:
+         vrf: RVP_SGSS_NAN-HDC
+         nei: 192.2.16.62
+       BE5.2425:
+         vrf: RVP_SGSS_NAN-PDC
+         nei: 192.2.14.62
+       BE5.2436:
+         vrf: RVP_ALD_SRV
+         nei: 192.2.168.18
+       BE5.2442:
+         vrf: RVP_CDN_HOB
+         nei: 192.2.243.2
+       BE5.2446:
+         vrf: RVP_CDN_HOT
+         nei: 192.2.253.6
+       BE5.2451:
+         vrf: RVP_ASSU_SRV
+         nei: 192.2.209.6
+       BE5.2462:
+         vrf: RVP_CDN-Dev
+         nei: 192.2.158.2
+       BE5.2471:
+         vrf: RVP_IBFS_DEV
+         nei: 192.2.176.6
+       BE5.2573:
+         vrf: RVP_NSX
+         nei:  192.2.178.42
+       BE5.2661:
+         vrf: RVP_IBFS_SSZ
+         nei: 192.4.176.18
+       BE5.2664:
+         vrf: RVP_IBFS_SGII
+         nei: 192.4.178.18
+       BE5.2669:
+         vrf: RVP_IBFS_SGII_UAT
+         nei: 192.4.198.18
+       BE5.3066:
+         vrf: PCOM
+         nei: 192.131.240.222
+       BE5.3095:
+         vrf: DCITS
+         nei: 192.131.241.41
+       BE5.3105:
+         vrf: HCITS
+         nei: 192.131.241.65
+       BE5.3176:
+         vrf: HCOM
+         nei: 192.131.241.238
+       BE5.3382:
+         vrf: RVP_ITEC
+         nei: 192.2.181.33
+       BE5.3241:
+         vrf: RIX
+         nei: 192.2.24.118     
+     remote_as: 64924
+     CE: DC2A4-CLOUD-CFD-vdc2
+     CE_interface: PO5
+     speed: 20G
+     BACKBONE: BLUE

@@ -1,0 +1,58 @@
+!--------------------------------------------------------	   
+! DC2RTRWEBCELLA2-P1: Rollback interfaces Configuration
+!--------------------------------------------------------
+!-------------------------------------------------------- 
+! DC2RTRWEBCELLA2-P1: Shutdown the PE<=>CE interface 
+!-------------------------------------------------------- 
+interface Eth1/1
+shutdown
+ !
+!
+no interface Eth1/1.2221
+
+!******************************************************** 
+ DC2RTRWEBCELLA2-P1: Rollback interface configuration
+!******************************************************** 
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2221
+logging event port link-status
+logging event port trunk-status
+interface vlan 2221
+ description FED_RIX_SC2-A1_Te0/0/0/8_10G
+ vrf member RIX
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.21.182/30
+no ipv6 redirects
+
+
+!-------------------------------------------------------- 
+! DC2RTRWEBCELLA2-P1: no Shutdown the PE<=>CE interface 
+!-------------------------------------------------------- 
+
+interface Eth1/1
+no shutdown
+ !
+!
+interface vlan 2221
+no shutdown
+
+!--------------------------------------------------------	 
+!POST-Check DC2RTRWEBCELLA2-P1: Capture the O/P of the below commands for comparison after the rollback
+!--------------------------------------------------------
+!
+sh int status | in Eth1/1
+!
+show interfaces Eth1/1 | in error
+!
+ 
+sh bgp vrf all summary | in 192.2.21.181
+!
+!
+
+

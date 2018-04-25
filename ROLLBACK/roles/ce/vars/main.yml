@@ -1,0 +1,240 @@
+---
+routers:
+   - hostname: DC2A3-CLOUD-CFD-vdc2
+     main_interface: po5
+     sub_int:
+       PO5.1502:
+         vlan: 1502
+         vrf: RVP_NOOBA
+         ip: 192.0.21.68/27
+       PO5.2403:
+         vlan: 2403
+         vrf: RVP_SGSS_PAR-HDC
+         ip: 192.208.96.54/30
+         nei: 192.208.96.53
+       PO5.2411:
+         vlan: 2411
+         vrf: RVP_SGSS_PAR-PDC
+         ip:  192.4.139.2/30
+         nei: 192.4.139.1
+       PO5.2414:
+         vlan: 2414
+         vrf: RVP_CDN
+         ip: 192.4.116.2/30
+         nei: 192.4.116.1
+       PO5.2416:
+         vlan: 2416
+         vrf: RVP_SHAREDSERVICES
+         ip: 192.2.248.58/30
+         nei: 192.2.248.57
+       PO5.2421:
+         vlan: 2421
+         vrf: RVP_SGSS_NAN-HDC
+         ip: 192.2.16.58/3
+         nei: 192.2.16.57
+       PO5.2424:
+         vlan: 2424
+         vrf: RVP_SGSS_NAN-PDC
+         ip: 192.2.14.58/30
+         nei: 192.2.14.57
+       PO5.2435:
+         vlan: 2435
+         vrf: RVP_ALD_SRV
+         ip: 192.2.168.14/30
+         nei: 192.2.168.13
+       PO5.2441:
+         vlan: 2441
+         vrf: RVP_CDN_HOB
+         ip: 192.2.243.2/30
+         nei: 192.2.243.1
+       PO5.2445:
+         vlan: 2445
+         vrf: RVP_CDN_HOT
+         ip: 192.2.253.2/30
+         nei: 192.2.253.1
+       PO5.2450:
+         vlan: 2450
+         vrf: RVP_ASSU_SRV
+         ip: 192.2.209.2/30
+         nei: 192.2.209.1
+       PO5.2460:
+         vlan: 2460
+         vrf: RVP_CDN-Dev
+         ip: 192.2.158.2/30
+         nei: 192.2.158.1
+       PO5.2470:
+         vlan: 2470
+         vrf: RVP_IBFS_DEV
+         ip: 192.2.176.2/30
+         nei: 192.2.176.1
+       PO5.2572:
+         vlan: 2572
+         vrf: RVP_NSX
+         ip:  192.2.178.38/30
+         nei: 192.2.178.37
+       PO5.2660:
+         vlan: 2660
+         vrf: RVP_IBFS_SSZ
+         ip: 192.4.176.14/30
+         nei: 192.4.176.13
+       PO5.2663:
+         vlan: 2663
+         vrf: RVP_IBFS_SGII
+         ip: 192.4.178.14/30
+         nei: 192.4.178.13
+       PO5.2668:
+         vlan: 2668
+         vrf: RVP_IBFS_SGII_UAT
+         ip: 192.4.198.14/30
+         nei: 192.4.198.13
+       PO5.3064:
+         vlan: 3064
+         vrf: PCOM
+         ip: 192.131.240.214/30
+         nei: 192.131.240.213
+       PO5.3094:
+         vlan: 3094
+         vrf: DCITS
+         ip: 192.131.241.37/30
+         nei: 192.131.241.38
+       PO5.3104:
+         vlan: 3104
+         vrf: HCITS
+         ip: 192.131.241.61/30
+         nei: 192.131.241.62
+       PO5.3174:
+         vlan: 3174
+         vrf: HCOM
+         ip: 192.131.241.230/30
+         nei: 192.131.241.229
+       PO5.3381:
+         vlan: 3381
+         vrf: RVP_ITEC
+         ip: 192.2.181.29/30
+         nei: 192.2.181.30
+     remote_as: 64911
+     PE: DC2-B1
+     PE_interface: BE5
+     speed: 20G
+   - hostname: DC2A4-CLOUD-CFD-vdc2
+     main_interface: Eth1/1
+     sub_int:
+       PO5.1502:
+         vlan: 1502
+         vrf: RVP_NOOBA
+         ip: 192.0.21.69/27
+       PO5.2404:
+         vlan: 2404
+         vrf: RVP_SGSS_PAR-HDC
+         ip: 192.208.96.58/30
+         nei: 192.208.96.57
+       PO5.2409:
+         vlan: 2409
+         vrf: RVP_SGSS_PAR-PDC
+         ip:  192.4.139.6/30
+         nei: 192.4.139.5
+       PO5.2412:
+         vlan: 2412
+         vrf: RVP_CDN
+         ip: 192.4.116.6/30
+         nei: 192.4.116.5
+       PO5.2417:
+         vlan: 2417
+         vrf: RVP_SHAREDSERVICES
+         ip: 192.2.248.62/30
+         nei: 192.2.248.61
+       PO5.2422:
+         vlan: 2422
+         vrf: RVP_SGSS_NAN-HDC
+         ip: 192.2.16.62/30
+         nei: 192.2.16.61
+       PO5.2425:
+         vlan: 2425
+         vrf: RVP_SGSS_NAN-PDC
+         ip: 192.2.14.62/30
+         nei: 192.2.14.61
+       PO5.2436:
+         vlan: 2436
+         vrf: RVP_ALD_SRV
+         ip: 192.2.168.18/30
+         nei: 192.2.168.17
+       PO5.2442:
+         vlan: 2442
+         vrf: RVP_CDN_HOB
+         ip: 192.2.243.6/30
+         nei: 192.2.243.5
+       PO5.2446:
+         vlan: 2446
+         vrf: RVP_CDN_HOT
+         ip: 192.2.253.6/30
+         nei: 192.2.253.5
+       PO5.2451:
+         vlan: 2451
+         vrf: RVP_ASSU_SRV
+         ip: 192.2.209.6/30
+         nei: 192.2.209.5
+       PO5.2462:
+         vlan: 2462
+         vrf: RVP_CDN-Dev
+         ip: 192.2.158.10/30
+         nei: 192.2.158.9
+       PO5.2471:
+         vlan: 2471
+         vrf: RVP_IBFS_DEV
+         ip: 192.2.176.6/30
+         nei: 192.2.176.5
+       PO5.2573:
+         vlan: 2573
+         vrf: RVP_NSX
+         ip:  192.2.178.42/30
+         nei: 192.2.178.41
+       PO5.2661:
+         vlan: 2661
+         vrf: RVP_IBFS_SSZ
+         ip: 192.4.176.18/30
+         nei: 192.4.176.17
+       PO5.2664:
+         vlan: 2664
+         vrf: RVP_IBFS_SGII
+         ip: 192.4.178.18/30
+         nei: 192.4.178.17
+       PO5.2669:
+         vlan: 2669
+         vrf: RVP_IBFS_SGII_UAT
+         ip: 192.4.198.18/30
+         nei: 192.4.198.17
+       PO5.3066:
+         vlan: 3066
+         vrf: PCOM
+         ip: 192.131.240.222/30
+         nei: 192.131.240.221
+       PO5.3095:
+         vlan: 3095
+         vrf: DCITS
+         ip: 192.131.241.41/30
+         nei: 192.131.241.42
+       PO5.3105:
+         vlan: 3105
+         vrf: HCITS
+         ip: 192.131.241.65/30
+         nei: 192.131.241.66
+       PO5.3176:
+         vlan: 3176
+         vrf: HCOM
+         ip: 192.131.241.238/30
+         nei: 192.131.241.237
+       PO5.3382:
+         vlan: 3382
+         vrf: RVP_ITEC
+         ip: 192.2.181.33/30
+         nei: 192.2.181.34
+       PO5.3241:
+         vlan: 3241
+         vrf: RIX
+         ip: 192.2.24.118/30
+         nei: 192.2.24.117
+     remote_as: 64911
+     PE: DC2-B2
+     PE_interface: PO5
+     speed: 20G
+

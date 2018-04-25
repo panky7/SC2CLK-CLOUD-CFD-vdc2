@@ -1,0 +1,279 @@
+!#####################################################################################	   
+! Rollback:	   /!\ à mettre dans un ficher distinct dans la section rollback de la DMEP .doc
+!####################################################################################	   
+!	   
+!--------------------------------------------------------	   
+! Step 1 DC2-B2: Rollback Peerings BGP and Interfacy policy map on all Interconexion	   
+!--------------------------------------------------------
+
+show configuration commit list detail | utility egrep 'Comment:  JUMP-Ticket:Interface Description' -B 4
+
+! Find the rollback ID from the last command
+
+show configuration commit changes <commit-id>
+
+! It will show the configuration of Interface description change
+! If that is the case do the rollback with the commit ID
+
+rollback configuration <commit-id> comment JUMP-Ticket:rollback
+
+!********************************************************	   
+Checks DC2-B2
+!********************************************************	   
+!
+!
+show ip int brief | in BE5
+!
+show interfaces BE5 | in errors
+!
+ 
+ 
+sh bgp vrf all summary | in 192.2.16.62
+!
+ 
+sh bgp vrf all summary | in 192.131.240.222
+!
+ 
+sh bgp vrf all summary | in 192.2.158.2
+!
+ 
+sh bgp vrf all summary | in 192.131.241.65
+!
+ 
+sh bgp vrf all summary | in 192.4.198.18
+!
+ 
+sh bgp vrf all summary | in 192.2.253.6
+!
+ 
+sh bgp vrf all summary | in 192.2.243.2
+!
+ 
+sh bgp vrf all summary | in 192.4.176.18
+!
+ 
+sh bgp vrf all summary | in 192.2.14.62
+!
+ 
+sh bgp vrf all summary | in 192.4.178.18
+!
+ 
+sh bgp vrf all summary | in 192.131.241.41
+!
+ 
+sh bgp vrf all summary | in 192.4.139.6
+!
+ 
+sh bgp vrf all summary | in 192.2.24.118
+!
+ 
+sh bgp vrf all summary | in 192.131.241.238
+!
+ 
+sh bgp vrf all summary | in 192.2.176.6
+!
+ 
+sh bgp vrf all summary | in 192.2.181.33
+!
+ 
+sh bgp vrf all summary | in 192.2.209.6
+!
+ 
+sh bgp vrf all summary | in 192.2.168.18
+!
+ 
+sh bgp vrf all summary | in 192.4.116.6
+!
+ 
+sh bgp vrf all summary | in 192.2.178.42
+!
+ 
+sh bgp vrf all summary | in 192.2.248.62
+!
+ 
+sh bgp vrf all summary | in 192.208.96.58
+!
+!
+!
+!
+!
+
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.62 routes 
+!
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.62 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.62 advertised-routes
+!
+sh bgp vrf RVP_SGSS_NAN-HDC neighbors 192.2.16.62 advertised-count
+
+sh bgp vrf PCOM neighbors 192.131.240.222 routes 
+!
+sh bgp vrf PCOM neighbors 192.131.240.222 routes | in Processed
+!
+sh bgp vrf PCOM neighbors 192.131.240.222 advertised-routes
+!
+sh bgp vrf PCOM neighbors 192.131.240.222 advertised-count
+
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 routes 
+!
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 advertised-routes
+!
+sh bgp vrf RVP_CDN-Dev neighbors 192.2.158.2 advertised-count
+
+sh bgp vrf HCITS neighbors 192.131.241.65 routes 
+!
+sh bgp vrf HCITS neighbors 192.131.241.65 routes | in Processed
+!
+sh bgp vrf HCITS neighbors 192.131.241.65 advertised-routes
+!
+sh bgp vrf HCITS neighbors 192.131.241.65 advertised-count
+
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.18 routes 
+!
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.18 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.18 advertised-routes
+!
+sh bgp vrf RVP_IBFS_SGII_UAT neighbors 192.4.198.18 advertised-count
+
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.6 routes 
+!
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.6 routes | in Processed
+!
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.6 advertised-routes
+!
+sh bgp vrf RVP_CDN_HOT neighbors 192.2.253.6 advertised-count
+
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 routes 
+!
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 routes | in Processed
+!
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 advertised-routes
+!
+sh bgp vrf RVP_CDN_HOB neighbors 192.2.243.2 advertised-count
+
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.18 routes 
+!
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.18 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.18 advertised-routes
+!
+sh bgp vrf RVP_IBFS_SSZ neighbors 192.4.176.18 advertised-count
+
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.62 routes 
+!
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.62 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.62 advertised-routes
+!
+sh bgp vrf RVP_SGSS_NAN-PDC neighbors 192.2.14.62 advertised-count
+
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.18 routes 
+!
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.18 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.18 advertised-routes
+!
+sh bgp vrf RVP_IBFS_SGII neighbors 192.4.178.18 advertised-count
+
+sh bgp vrf DCITS neighbors 192.131.241.41 routes 
+!
+sh bgp vrf DCITS neighbors 192.131.241.41 routes | in Processed
+!
+sh bgp vrf DCITS neighbors 192.131.241.41 advertised-routes
+!
+sh bgp vrf DCITS neighbors 192.131.241.41 advertised-count
+
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.6 routes 
+!
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.6 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.6 advertised-routes
+!
+sh bgp vrf RVP_SGSS_PAR-PDC neighbors 192.4.139.6 advertised-count
+
+sh bgp vrf RIX neighbors 192.2.24.118 routes 
+!
+sh bgp vrf RIX neighbors 192.2.24.118 routes | in Processed
+!
+sh bgp vrf RIX neighbors 192.2.24.118 advertised-routes
+!
+sh bgp vrf RIX neighbors 192.2.24.118 advertised-count
+
+sh bgp vrf HCOM neighbors 192.131.241.238 routes 
+!
+sh bgp vrf HCOM neighbors 192.131.241.238 routes | in Processed
+!
+sh bgp vrf HCOM neighbors 192.131.241.238 advertised-routes
+!
+sh bgp vrf HCOM neighbors 192.131.241.238 advertised-count
+
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.6 routes 
+!
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.6 routes | in Processed
+!
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.6 advertised-routes
+!
+sh bgp vrf RVP_IBFS_DEV neighbors 192.2.176.6 advertised-count
+
+sh bgp vrf RVP_ITEC neighbors 192.2.181.33 routes 
+!
+sh bgp vrf RVP_ITEC neighbors 192.2.181.33 routes | in Processed
+!
+sh bgp vrf RVP_ITEC neighbors 192.2.181.33 advertised-routes
+!
+sh bgp vrf RVP_ITEC neighbors 192.2.181.33 advertised-count
+
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.6 routes 
+!
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.6 routes | in Processed
+!
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.6 advertised-routes
+!
+sh bgp vrf RVP_ASSU_SRV neighbors 192.2.209.6 advertised-count
+
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.18 routes 
+!
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.18 routes | in Processed
+!
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.18 advertised-routes
+!
+sh bgp vrf RVP_ALD_SRV neighbors 192.2.168.18 advertised-count
+
+sh bgp vrf RVP_CDN neighbors 192.4.116.6 routes 
+!
+sh bgp vrf RVP_CDN neighbors 192.4.116.6 routes | in Processed
+!
+sh bgp vrf RVP_CDN neighbors 192.4.116.6 advertised-routes
+!
+sh bgp vrf RVP_CDN neighbors 192.4.116.6 advertised-count
+
+sh bgp vrf RVP_NSX neighbors 192.2.178.42 routes 
+!
+sh bgp vrf RVP_NSX neighbors 192.2.178.42 routes | in Processed
+!
+sh bgp vrf RVP_NSX neighbors 192.2.178.42 advertised-routes
+!
+sh bgp vrf RVP_NSX neighbors 192.2.178.42 advertised-count
+
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.62 routes 
+!
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.62 routes | in Processed
+!
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.62 advertised-routes
+!
+sh bgp vrf RVP_SHAREDSERVICES neighbors 192.2.248.62 advertised-count
+
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.58 routes 
+!
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.58 routes | in Processed
+!
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.58 advertised-routes
+!
+sh bgp vrf RVP_SGSS_PAR-HDC neighbors 192.208.96.58 advertised-count
+!
+!
+
+

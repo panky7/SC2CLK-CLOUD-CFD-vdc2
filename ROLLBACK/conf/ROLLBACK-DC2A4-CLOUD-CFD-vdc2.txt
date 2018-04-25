@@ -1,0 +1,540 @@
+!--------------------------------------------------------	   
+! DC2A4-CLOUD-CFD-vdc2: Rollback interfaces Configuration
+!--------------------------------------------------------
+!-------------------------------------------------------- 
+! DC2A4-CLOUD-CFD-vdc2: Shutdown the PE<=>CE interface 
+!-------------------------------------------------------- 
+interface Eth1/1
+shutdown
+ !
+!
+no interface PO5.3066
+no interface PO5.1502
+no interface PO5.2417
+no interface PO5.2412
+no interface PO5.3176
+no interface PO5.2664
+no interface PO5.3382
+no interface PO5.2436
+no interface PO5.2661
+no interface PO5.2451
+no interface PO5.3241
+no interface PO5.2669
+no interface PO5.3105
+no interface PO5.2471
+no interface PO5.2422
+no interface PO5.2409
+no interface PO5.2425
+no interface PO5.2404
+no interface PO5.2442
+no interface PO5.2462
+no interface PO5.2446
+no interface PO5.3095
+no interface PO5.2573
+
+!******************************************************** 
+ DC2A4-CLOUD-CFD-vdc2: Rollback interface configuration
+!******************************************************** 
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 3066
+logging event port link-status
+logging event port trunk-status
+interface vlan 3066
+ description FED_PCOM_SC2-A1_Te0/0/0/8_10G
+ vrf member PCOM
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.131.240.222/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 1502
+logging event port link-status
+logging event port trunk-status
+interface vlan 1502
+ description FED_RVP_NOOBA_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_NOOBA
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.0.21.69/27
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2417
+logging event port link-status
+logging event port trunk-status
+interface vlan 2417
+ description FED_RVP_SHAREDSERVICES_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_SHAREDSERVICES
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.248.62/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2412
+logging event port link-status
+logging event port trunk-status
+interface vlan 2412
+ description FED_RVP_CDN_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_CDN
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.4.116.6/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 3176
+logging event port link-status
+logging event port trunk-status
+interface vlan 3176
+ description FED_HCOM_SC2-A1_Te0/0/0/8_10G
+ vrf member HCOM
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.131.241.238/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2664
+logging event port link-status
+logging event port trunk-status
+interface vlan 2664
+ description FED_RVP_IBFS_SGII_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_IBFS_SGII
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.4.178.18/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 3382
+logging event port link-status
+logging event port trunk-status
+interface vlan 3382
+ description FED_RVP_ITEC_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_ITEC
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.181.33/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2436
+logging event port link-status
+logging event port trunk-status
+interface vlan 2436
+ description FED_RVP_ALD_SRV_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_ALD_SRV
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.168.18/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2661
+logging event port link-status
+logging event port trunk-status
+interface vlan 2661
+ description FED_RVP_IBFS_SSZ_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_IBFS_SSZ
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.4.176.18/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2451
+logging event port link-status
+logging event port trunk-status
+interface vlan 2451
+ description FED_RVP_ASSU_SRV_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_ASSU_SRV
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.209.6/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 3241
+logging event port link-status
+logging event port trunk-status
+interface vlan 3241
+ description FED_RIX_SC2-A1_Te0/0/0/8_10G
+ vrf member RIX
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.24.118/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2669
+logging event port link-status
+logging event port trunk-status
+interface vlan 2669
+ description FED_RVP_IBFS_SGII_UAT_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_IBFS_SGII_UAT
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.4.198.18/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 3105
+logging event port link-status
+logging event port trunk-status
+interface vlan 3105
+ description FED_HCITS_SC2-A1_Te0/0/0/8_10G
+ vrf member HCITS
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.131.241.65/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2471
+logging event port link-status
+logging event port trunk-status
+interface vlan 2471
+ description FED_RVP_IBFS_DEV_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_IBFS_DEV
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.176.6/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2422
+logging event port link-status
+logging event port trunk-status
+interface vlan 2422
+ description FED_RVP_SGSS_NAN-HDC_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_SGSS_NAN-HDC
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.16.62/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2409
+logging event port link-status
+logging event port trunk-status
+interface vlan 2409
+ description FED_RVP_SGSS_PAR-PDC_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_SGSS_PAR-PDC
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.4.139.6/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2425
+logging event port link-status
+logging event port trunk-status
+interface vlan 2425
+ description FED_RVP_SGSS_NAN-PDC_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_SGSS_NAN-PDC
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.14.62/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2404
+logging event port link-status
+logging event port trunk-status
+interface vlan 2404
+ description FED_RVP_SGSS_PAR-HDC_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_SGSS_PAR-HDC
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.208.96.58/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2442
+logging event port link-status
+logging event port trunk-status
+interface vlan 2442
+ description FED_RVP_CDN_HOB_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_CDN_HOB
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.243.6/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2462
+logging event port link-status
+logging event port trunk-status
+interface vlan 2462
+ description FED_RVP_CDN-Dev_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_CDN-Dev
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.158.10/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2446
+logging event port link-status
+logging event port trunk-status
+interface vlan 2446
+ description FED_RVP_CDN_HOT_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_CDN_HOT
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.253.6/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 3095
+logging event port link-status
+logging event port trunk-status
+interface vlan 3095
+ description FED_DCITS_SC2-A1_Te0/0/0/8_10G
+ vrf member DCITS
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.131.241.41/30
+no ipv6 redirects
+interface Eth1/1
+description FED_SC2-A1_Te0/0/0/8_10G
+switchport
+switchport mode trunk
+switchport trunk native vlan 999
+switchport trunk allowed vlan add 2573
+logging event port link-status
+logging event port trunk-status
+interface vlan 2573
+ description FED_RVP_NSX_SC2-A1_Te0/0/0/8_10G
+ vrf member RVP_NSX
+bfd interval 500 min_rx 500 multiplier 3
+logging event port link-status
+no ip redirects
+ip address 192.2.178.42/30
+no ipv6 redirects
+
+
+!-------------------------------------------------------- 
+! DC2A4-CLOUD-CFD-vdc2: no Shutdown the PE<=>CE interface 
+!-------------------------------------------------------- 
+
+interface Eth1/1
+no shutdown
+ !
+!
+interface vlan 3066
+no shutdown
+interface vlan 1502
+no shutdown
+interface vlan 2417
+no shutdown
+interface vlan 2412
+no shutdown
+interface vlan 3176
+no shutdown
+interface vlan 2664
+no shutdown
+interface vlan 3382
+no shutdown
+interface vlan 2436
+no shutdown
+interface vlan 2661
+no shutdown
+interface vlan 2451
+no shutdown
+interface vlan 3241
+no shutdown
+interface vlan 2669
+no shutdown
+interface vlan 3105
+no shutdown
+interface vlan 2471
+no shutdown
+interface vlan 2422
+no shutdown
+interface vlan 2409
+no shutdown
+interface vlan 2425
+no shutdown
+interface vlan 2404
+no shutdown
+interface vlan 2442
+no shutdown
+interface vlan 2462
+no shutdown
+interface vlan 2446
+no shutdown
+interface vlan 3095
+no shutdown
+interface vlan 2573
+no shutdown
+
+!--------------------------------------------------------	 
+!POST-Check DC2A4-CLOUD-CFD-vdc2: Capture the O/P of the below commands for comparison after the rollback
+!--------------------------------------------------------
+!
+sh int status | in Eth1/1
+!
+show interfaces Eth1/1 | in error
+!
+ 
+sh bgp vrf all summary | in 192.131.240.221
+!
+ 
+ 
+sh bgp vrf all summary | in 192.2.248.61
+!
+ 
+sh bgp vrf all summary | in 192.4.116.5
+!
+ 
+sh bgp vrf all summary | in 192.131.241.237
+!
+ 
+sh bgp vrf all summary | in 192.4.178.17
+!
+ 
+sh bgp vrf all summary | in 192.2.181.34
+!
+ 
+sh bgp vrf all summary | in 192.2.168.17
+!
+ 
+sh bgp vrf all summary | in 192.4.176.17
+!
+ 
+sh bgp vrf all summary | in 192.2.209.5
+!
+ 
+sh bgp vrf all summary | in 192.2.24.117
+!
+ 
+sh bgp vrf all summary | in 192.4.198.17
+!
+ 
+sh bgp vrf all summary | in 192.131.241.66
+!
+ 
+sh bgp vrf all summary | in 192.2.176.5
+!
+ 
+sh bgp vrf all summary | in 192.2.16.61
+!
+ 
+sh bgp vrf all summary | in 192.4.139.5
+!
+ 
+sh bgp vrf all summary | in 192.2.14.61
+!
+ 
+sh bgp vrf all summary | in 192.208.96.57
+!
+ 
+sh bgp vrf all summary | in 192.2.243.5
+!
+ 
+sh bgp vrf all summary | in 192.2.158.9
+!
+ 
+sh bgp vrf all summary | in 192.2.253.5
+!
+ 
+sh bgp vrf all summary | in 192.131.241.42
+!
+ 
+sh bgp vrf all summary | in 192.2.178.41
+!
+!
+
+
